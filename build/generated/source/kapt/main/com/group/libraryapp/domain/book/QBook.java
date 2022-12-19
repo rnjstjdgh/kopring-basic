@@ -23,8 +23,6 @@ public class QBook extends EntityPathBase<Book> {
 
     public final StringPath name = createString("name");
 
-    public final EnumPath<BookType> type = createEnum("type", BookType.class);
-
     public QBook(String variable) {
         super(Book.class, forVariable(variable));
     }
