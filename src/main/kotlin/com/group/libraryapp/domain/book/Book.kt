@@ -9,18 +9,12 @@ class Book(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long? = null,
+    private val id: Long? = null,
 ) {
+
     init {
-        if(name.isBlank()) {
-
+        if (name.isEmpty()) {
+            throw IllegalArgumentException("이름은 비어 있을 수 없습니다")
         }
-    }
-
-    fun test() {
-        val s1 = ""
-        s1.isEmpty() // true
-        val s2 = "  "
-        s2.isEmpty() // false
     }
 }
